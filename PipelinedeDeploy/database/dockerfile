@@ -1,0 +1,11 @@
+FROM mysql:5.7
+
+WORKDIR /var/lib/mysql/
+
+ENV MYSQL_ROOT_PASSWORD=ROOT_PASSWORD
+
+ENV MYSQL_DATABASE=MYSQL_DATABASE
+
+ADD sql.sql /docker-entrypoint-initdb.d
+
+EXPOSE 3306
